@@ -232,6 +232,14 @@ input {
   grid-template-columns: 1fr;
 }
 
+.counter-setup-actions {
+  margin-top: 16px;
+}
+
+.counter-setup-actions button {
+  width: 100%;
+}
+
 .current-number {
   display: flex;
   min-height: 210px;
