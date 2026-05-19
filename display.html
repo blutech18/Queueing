@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queueing System | Display</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <h1>Now Serving</h1>
+      <span>TV / Monitor Display</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Kiosk</a>
+      <a href="counter.html">Counter</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="page display-page display-layout">
+    <section class="card display-current">
+      <div class="current-number">
+        <span>Currently Serving</span>
+        <strong id="displayQueue">---</strong>
+        <span id="displayService">Waiting for next call</span>
+        <div class="meta-row">
+          <span class="pill" id="displayCounter">Counter --</span>
+          <span class="pill" id="displayTime">--</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2>Recent Calls</h2>
+      <div class="list" id="recentList"></div>
+    </aside>
+  </main>
+
+  <script src="js/display.js"></script>
+</body>
+</html>

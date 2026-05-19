@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queueing System | Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <h1>Admin</h1>
+      <span>Services, queue records, and daily statistics</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Kiosk</a>
+      <a href="counter.html">Counter</a>
+      <a href="display.html">Display</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="stats-grid" id="statsGrid"></section>
+
+    <section class="grid" style="margin-top: 20px;">
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <h2>Services</h2>
+            <p>Enable or disable kiosk services.</p>
+          </div>
+        </div>
+        <div class="list" id="serviceList"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <h2>Today’s Queues</h2>
+            <p>Latest queue records for the current day.</p>
+          </div>
+          <button class="secondary" id="refreshAdmin">Refresh</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Queue</th>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Counter</th>
+                <th>Created</th>
+              </tr>
+            </thead>
+            <tbody id="queueRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <p class="message" id="adminMessage"></p>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

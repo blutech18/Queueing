@@ -1,0 +1,19 @@
+{
+  "name": "queueing-system",
+  "version": "1.0.0",
+  "description": "Plain HTML/CSS/JS queueing system with Vercel Serverless Functions and Neon PostgreSQL.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "local": "vercel dev"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4"
+  },
+  "devDependencies": {
+    "vercel": "^34.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
