@@ -14,25 +14,27 @@
     </div>
   </header>
 
-  <main class="page display-page display-layout">
-    <section class="card display-current">
-      <div class="current-number">
-        <span>Currently Serving</span>
-        <strong id="displayQueue">---</strong>
-        <span id="displayService">Waiting for next call</span>
-        <div class="meta-row">
-          <span class="pill" id="displayCounter">Counter --</span>
-          <span class="pill" id="displayTime">--</span>
+  <main class="page display-page">
+    <div class="display-layout">
+      <section class="card display-current">
+        <div class="current-number">
+          <span>Currently Serving</span>
+          <strong id="displayQueue">---</strong>
+          <span id="displayService">Waiting for next call</span>
+          <div class="meta-row">
+            <span class="pill" id="displayCounter">Counter --</span>
+            <span class="pill" id="displayTime">--</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <aside class="card display-recent">
-      <h2>Recent Calls</h2>
-      <div class="recent-scroll" id="recentScroll">
-        <div class="list" id="recentList"></div>
-      </div>
-    </aside>
+      <aside class="card display-recent">
+        <h2>Recent Calls</h2>
+        <div class="recent-scroll" id="recentScroll">
+          <div class="list" id="recentList"></div>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <script src="js/api-fetch.js"></script>
