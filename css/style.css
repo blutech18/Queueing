@@ -580,6 +580,8 @@ body.display-screen .display-layout {
   flex: 1;
   min-height: 0;
   align-items: stretch;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+  grid-template-rows: none;
 }
 
 body.display-screen .display-current,
@@ -634,8 +636,8 @@ body.display-screen .current-number span {
 
 @media (max-width: 1024px) {
   body.display-screen .display-layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+    grid-template-rows: none;
   }
 }
 
@@ -649,7 +651,8 @@ body.display-screen .current-number span {
   }
 
   body.display-screen .display-layout {
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+    grid-template-rows: none;
     gap: 14px;
   }
 
