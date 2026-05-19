@@ -627,12 +627,60 @@ body.display-screen .recent-scroll .list {
   min-height: min-content;
 }
 
-body.display-screen .display-current strong {
-  font-size: clamp(56px, 10vh, 160px);
+body.display-screen .brand h1 {
+  font-size: clamp(32px, 3.5vh, 48px);
 }
 
-body.display-screen .current-number span {
-  font-size: clamp(14px, 2vh, 20px);
+body.display-screen .brand span {
+  font-size: clamp(16px, 1.8vh, 22px);
+}
+
+body.display-screen .display-current .current-number > span:first-child {
+  font-size: clamp(24px, 3vh, 40px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.display-screen .display-current strong {
+  font-size: clamp(100px, 20vh, 260px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+body.display-screen #displayService {
+  margin-top: 8px;
+  font-size: clamp(32px, 4.5vh, 56px);
+  font-weight: 700;
+  color: var(--text);
+}
+
+body.display-screen .meta-row {
+  margin-top: clamp(16px, 3vh, 32px);
+  gap: clamp(12px, 2vh, 24px);
+}
+
+body.display-screen .meta-row .pill {
+  font-size: clamp(22px, 2.8vh, 36px);
+  padding: clamp(10px, 1.5vh, 16px) clamp(18px, 2.5vh, 28px);
+}
+
+body.display-screen .display-recent h2 {
+  font-size: clamp(26px, 2.8vh, 38px);
+}
+
+body.display-screen .list-row-main strong {
+  font-size: clamp(20px, 2.2vh, 28px);
+}
+
+body.display-screen .list-row-main small,
+body.display-screen .list-row-time {
+  font-size: clamp(14px, 1.6vh, 18px);
+}
+
+body.display-screen .list-row-meta .pill {
+  font-size: clamp(13px, 1.5vh, 17px);
+  padding: 6px 12px;
 }
 
 @media (max-width: 1024px) {
