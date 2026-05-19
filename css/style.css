@@ -547,6 +547,117 @@ th {
   }
 }
 
+/* TV / monitor display: lock to viewport, no page scroll */
+html.display-root {
+  height: 100%;
+}
+
+body.display-screen {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body.display-screen .app-header {
+  flex-shrink: 0;
+  padding: 14px 24px;
+}
+
+body.display-screen .display-page {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+body.display-screen .display-layout {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+
+body.display-screen .display-current,
+body.display-screen .display-recent {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+body.display-screen .display-current {
+  min-height: 0;
+}
+
+body.display-screen .display-current .current-number {
+  flex: 1;
+  min-height: 0;
+}
+
+body.display-screen .display-recent h2 {
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+
+body.display-screen .recent-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+}
+
+body.display-screen .recent-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body.display-screen .recent-scroll .list {
+  min-height: min-content;
+}
+
+body.display-screen .display-current strong {
+  font-size: clamp(56px, 10vh, 160px);
+}
+
+body.display-screen .current-number span {
+  font-size: clamp(14px, 2vh, 20px);
+}
+
+@media (max-width: 1024px) {
+  body.display-screen .display-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+@media (max-width: 860px) {
+  body.display-screen .display-page {
+    padding: 12px 14px 14px;
+  }
+
+  body.display-screen .app-header {
+    padding: 12px 16px;
+  }
+
+  body.display-screen .display-layout {
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  body.display-screen .brand h1 {
+    font-size: 20px;
+  }
+}
+
 @media print {
   @page {
     size: auto;

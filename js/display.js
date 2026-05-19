@@ -3,19 +3,30 @@ const displayService = document.getElementById('displayService');
 const displayCounter = document.getElementById('displayCounter');
 const displayTime = document.getElementById('displayTime');
 const recentList = document.getElementById('recentList');
+const recentScroll = document.getElementById('recentScroll');
 
 function formatTime(value) {
   if (!value) return '--';
   return new Date(value).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
+function scrollRecentToBottom() {
+  if (!recentScroll) return;
+  requestAnimationFrame(() => {
+    recentScroll.scrollTop = recentScroll.scrollHeight;
+  });
+}
+
 function renderRecent(rows) {
-  if (!rows.length) {
+  const ordered = [...rows].reverse();
+
+  if (!ordered.length) {
     recentList.innerHTML = '<p class="empty">No recent calls yet.</p>';
+    scrollRecentToBottom();
     return;
   }
 
-  recentList.innerHTML = rows.map((queue) => `
+  recentList.innerHTML = ordered.map((queue) => `
     <div class="list-row">
       <div class="list-row-main">
         <strong>${queue.queue_number}</strong>
@@ -27,6 +38,7 @@ function renderRecent(rows) {
       </div>
     </div>
   `).join('');
+  scrollRecentToBottom();
 }
 
 async function loadServing() {

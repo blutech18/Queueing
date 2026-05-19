@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="display-root">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Queueing System | Display</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="display-screen">
   <header class="app-header">
     <div class="brand">
       <h1>Now Serving</h1>
@@ -27,9 +27,11 @@
       </div>
     </section>
 
-    <aside class="card">
+    <aside class="card display-recent">
       <h2>Recent Calls</h2>
-      <div class="list" id="recentList"></div>
+      <div class="recent-scroll" id="recentScroll">
+        <div class="list" id="recentList"></div>
+      </div>
     </aside>
   </main>
 
