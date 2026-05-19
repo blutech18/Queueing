@@ -51,8 +51,8 @@ function renderQueues(queues) {
 function renderServices(services) {
   serviceList.innerHTML = services.map((service) => `
     <div class="list-row">
-      <div>
-        <strong>${service.name}</strong><br>
+      <div class="list-row-main">
+        <strong>${service.name}</strong>
         <small>${service.code}</small>
       </div>
       <label class="toggle-row">

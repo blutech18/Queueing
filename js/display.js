@@ -17,13 +17,13 @@ function renderRecent(rows) {
 
   recentList.innerHTML = rows.map((queue) => `
     <div class="list-row">
-      <div>
-        <strong>${queue.queue_number}</strong><br>
+      <div class="list-row-main">
+        <strong>${queue.queue_number}</strong>
         <small>${queue.service_name}</small>
       </div>
-      <div>
-        <span class="pill">Counter ${queue.counter_number || '--'}</span><br>
-        <small>${formatTime(queue.called_at)}</small>
+      <div class="list-row-meta">
+        <span class="pill">Counter ${queue.counter_number || '--'}</span>
+        <small class="list-row-time">${formatTime(queue.called_at)}</small>
       </div>
     </div>
   `).join('');
