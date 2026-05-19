@@ -31,9 +31,7 @@ function renderRecent(rows) {
 
 async function loadServing() {
   try {
-    const response = await fetch('/api/serving');
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error || 'Request failed.');
+    const data = await apiFetch('/api/serving');
 
     const current = data.serving[0];
     displayQueue.textContent = current ? current.queue_number : '---';
@@ -48,4 +46,6 @@ async function loadServing() {
 }
 
 loadServing();
-setInterval(loadServing, 3000);
+if (window.location.protocol !== 'file:') {
+  setInterval(loadServing, 3000);
+}

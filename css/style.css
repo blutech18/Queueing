@@ -186,7 +186,7 @@ button:disabled {
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
   gap: 16px;
 }
 
@@ -194,12 +194,15 @@ label {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
   color: var(--muted);
   font-weight: 700;
 }
 
 select,
 input {
+  width: 100%;
+  max-width: 100%;
   min-height: 44px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -211,8 +214,22 @@ input {
 
 .counter-layout {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 22rem);
   gap: 18px;
+  align-items: start;
+}
+
+.counter-layout > * {
+  min-width: 0;
+}
+
+.counter-layout aside h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.counter-layout aside .form-grid {
+  grid-template-columns: 1fr;
 }
 
 .current-number {
@@ -410,6 +427,16 @@ th {
   min-height: auto;
 }
 
+@media (max-width: 1024px) {
+  .counter-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-layout aside .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
   .app-header,
   .section-title {
@@ -417,9 +444,12 @@ th {
     flex-direction: column;
   }
 
-  .counter-layout,
   .display-layout,
   .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-layout aside .form-grid {
     grid-template-columns: 1fr;
   }
 
@@ -433,6 +463,21 @@ th {
 
   table {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    width: min(1180px, calc(100% - 20px));
+    margin: 16px auto;
+  }
+
+  .app-header {
+    padding: 14px 16px;
+  }
+
+  .card {
+    padding: 14px;
   }
 }
 

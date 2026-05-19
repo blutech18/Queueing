@@ -4,16 +4,6 @@ const queueRows = document.getElementById('queueRows');
 const refreshAdmin = document.getElementById('refreshAdmin');
 const adminMessage = document.getElementById('adminMessage');
 
-async function apiFetch(url, options = {}) {
-  const response = await fetch(url, {
-    headers: { 'Content-Type': 'application/json' },
-    ...options
-  });
-  const data = await response.json();
-  if (!response.ok) throw new Error(data.error || 'Request failed.');
-  return data;
-}
-
 function setMessage(text, isError = false) {
   adminMessage.textContent = text;
   adminMessage.classList.toggle('error', isError);
@@ -110,4 +100,6 @@ async function toggleService(id, isActive) {
 
 refreshAdmin.addEventListener('click', loadAdmin);
 loadAdmin();
-setInterval(loadAdmin, 10000);
+if (window.location.protocol !== 'file:') {
+  setInterval(loadAdmin, 10000);
+}
