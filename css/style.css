@@ -170,9 +170,45 @@ button:disabled {
   min-height: 0;
 }
 
-.kiosk-grid .service-name {
-  font-size: clamp(14px, 1.4vw, 20px);
-  line-height: 1.25;
+body.kiosk-screen .kiosk-grid .service-button {
+  padding: clamp(12px, 2.5vh, 28px) clamp(14px, 1.8vw, 32px);
+  gap: clamp(8px, 1.5vh, 18px);
+  justify-content: center;
+}
+
+body.kiosk-screen .kiosk-grid .service-code {
+  font-size: clamp(14px, 2vh, 26px);
+  min-height: clamp(28px, 3.5vh, 46px);
+  padding: clamp(4px, 0.8vh, 10px) clamp(10px, 1.2vw, 18px);
+  font-weight: 700;
+}
+
+body.kiosk-screen .kiosk-grid .service-name {
+  font-size: clamp(20px, 4.5vh, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--blue-900);
+}
+
+@supports (width: 1cqh) {
+  .kiosk-grid .service-button {
+    container-type: size;
+  }
+
+  body.kiosk-screen .kiosk-grid .service-button {
+    padding: clamp(12px, 5cqh, 28px) clamp(14px, 6cqw, 32px);
+    gap: clamp(8px, 3cqh, 18px);
+  }
+
+  body.kiosk-screen .kiosk-grid .service-code {
+    font-size: clamp(14px, 13cqh, 26px);
+    min-height: clamp(28px, 18cqh, 46px);
+    padding: clamp(4px, 2cqh, 10px) clamp(10px, 4cqw, 18px);
+  }
+
+  body.kiosk-screen .kiosk-grid .service-name {
+    font-size: clamp(20px, 22cqh, 46px);
+  }
 }
 
 body.kiosk-screen {
@@ -204,14 +240,6 @@ body.kiosk-screen .kiosk-grid {
   min-height: 0;
   grid-auto-rows: 1fr;
   align-content: stretch;
-}
-
-body.kiosk-screen .kiosk-grid .service-name {
-  font-size: clamp(15px, 2.2vh, 26px);
-}
-
-body.kiosk-screen .kiosk-grid .service-code {
-  font-size: clamp(12px, 1.4vh, 15px);
 }
 
 body.kiosk-screen .kiosk-page .message {
