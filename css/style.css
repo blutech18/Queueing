@@ -558,11 +558,26 @@ body.display-screen {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  color: #0f172a;
+  background: linear-gradient(160deg, #dbeafe 0%, #eff6ff 38%, #f8fafc 100%);
 }
 
 body.display-screen .app-header {
   flex-shrink: 0;
   padding: 14px 24px;
+  background: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 55%, #2563eb 100%);
+  border-bottom: none;
+  box-shadow: 0 4px 18px rgba(30, 58, 138, 0.28);
+}
+
+body.display-screen .brand h1 {
+  font-size: clamp(32px, 3.5vh, 48px);
+  color: #ffffff;
+}
+
+body.display-screen .brand span {
+  font-size: clamp(16px, 1.8vh, 22px);
+  color: #bfdbfe;
 }
 
 body.display-screen .display-page {
@@ -574,6 +589,7 @@ body.display-screen .display-page {
   padding: 16px 20px 20px;
   display: flex;
   flex-direction: column;
+  background: transparent;
 }
 
 body.display-screen .display-page .display-layout {
@@ -591,20 +607,72 @@ body.display-screen .display-recent {
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
+  border: 1px solid #93c5fd;
+  box-shadow: 0 12px 32px rgba(29, 78, 216, 0.12);
 }
 
 body.display-screen .display-current {
   min-height: 0;
+  padding: 0;
+  background: #ffffff;
 }
 
 body.display-screen .display-current .current-number {
   flex: 1;
   min-height: 0;
+  border: none;
+  border-radius: 0;
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 45%, #bfdbfe 100%);
+}
+
+body.display-screen .display-current .current-number > span:first-child {
+  font-size: clamp(24px, 3vh, 40px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1e40af;
+}
+
+body.display-screen .display-current strong {
+  font-size: clamp(100px, 20vh, 260px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #1d4ed8;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.55);
+}
+
+body.display-screen #displayService {
+  margin-top: 8px;
+  font-size: clamp(32px, 4.5vh, 56px);
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+body.display-screen .meta-row {
+  margin-top: clamp(16px, 3vh, 32px);
+  gap: clamp(12px, 2vh, 24px);
+}
+
+body.display-screen .meta-row .pill {
+  font-size: clamp(22px, 2.8vh, 36px);
+  padding: clamp(10px, 1.5vh, 16px) clamp(18px, 2.5vh, 28px);
+  border-color: #93c5fd;
+  background: #ffffff;
+  color: #1e40af;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+body.display-screen .display-recent {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
 body.display-screen .display-recent h2 {
   flex-shrink: 0;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  font-size: clamp(26px, 2.8vh, 38px);
+  color: #1e3a8a;
+  border-bottom: 2px solid #bfdbfe;
 }
 
 body.display-screen .recent-scroll {
@@ -627,60 +695,32 @@ body.display-screen .recent-scroll .list {
   min-height: min-content;
 }
 
-body.display-screen .brand h1 {
-  font-size: clamp(32px, 3.5vh, 48px);
-}
-
-body.display-screen .brand span {
-  font-size: clamp(16px, 1.8vh, 22px);
-}
-
-body.display-screen .display-current .current-number > span:first-child {
-  font-size: clamp(24px, 3vh, 40px);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-body.display-screen .display-current strong {
-  font-size: clamp(100px, 20vh, 260px);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
-body.display-screen #displayService {
-  margin-top: 8px;
-  font-size: clamp(32px, 4.5vh, 56px);
-  font-weight: 700;
-  color: var(--text);
-}
-
-body.display-screen .meta-row {
-  margin-top: clamp(16px, 3vh, 32px);
-  gap: clamp(12px, 2vh, 24px);
-}
-
-body.display-screen .meta-row .pill {
-  font-size: clamp(22px, 2.8vh, 36px);
-  padding: clamp(10px, 1.5vh, 16px) clamp(18px, 2.5vh, 28px);
-}
-
-body.display-screen .display-recent h2 {
-  font-size: clamp(26px, 2.8vh, 38px);
+body.display-screen .list-row {
+  border-color: #bfdbfe;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
 }
 
 body.display-screen .list-row-main strong {
   font-size: clamp(20px, 2.2vh, 28px);
+  color: #1d4ed8;
 }
 
 body.display-screen .list-row-main small,
 body.display-screen .list-row-time {
   font-size: clamp(14px, 1.6vh, 18px);
+  color: #475569;
 }
 
 body.display-screen .list-row-meta .pill {
   font-size: clamp(13px, 1.5vh, 17px);
   padding: 6px 12px;
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+body.display-screen .empty {
+  color: #64748b;
 }
 
 @media (max-width: 1024px) {
