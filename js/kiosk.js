@@ -18,7 +18,6 @@ function serviceCard(service) {
   button.type = 'button';
   button.innerHTML = `
     <span class="service-icon">${getServiceIcon(service.code, service.name)}</span>
-    <span class="service-code">${service.code}</span>
     <span class="service-name">${service.name}</span>
   `;
   button.addEventListener('click', () => createQueue(service.id));
