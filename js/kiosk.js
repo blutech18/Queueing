@@ -17,6 +17,7 @@ function serviceCard(service) {
   button.className = 'service-button';
   button.type = 'button';
   button.innerHTML = `
+    <span class="service-icon">${getServiceIcon(service.code, service.name)}</span>
     <span class="service-code">${service.code}</span>
     <span class="service-name">${service.name}</span>
   `;
