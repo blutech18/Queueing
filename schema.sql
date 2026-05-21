@@ -36,7 +36,7 @@ CREATE INDEX IF NOT EXISTS idx_queues_created_at
 INSERT INTO services (name, code) VALUES
   ('AD RECORDS', 'AD'),
   ('PMO SERVICE (ESD)', 'PMO'),
-  ('FSD', 'FSD'),
+  ('ESD', 'ESD'),
   ('PRIORITY LANE', 'PR'),
   ('TERMINAL', 'TR'),
   ('FD-DISBURSEMENT', 'FD'),

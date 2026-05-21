@@ -11,10 +11,10 @@ const SERVICE_ICON_SVGS = {
     <path d="M26 22h12"/>
   `,
   ESD: `
-    <path d="M32 34c8 0 14-5 14-12V16H18v6c0 7 6 12 14 12z"/>
-    <path d="M20 40h24v6H20z"/>
-    <path d="M24 46v4M40 46v4"/>
-    <path d="M26 22h12"/>
+    <path d="M38 18l8 8-16 16-8-8 16-16z"/>
+    <path d="M24 32l8 8"/>
+    <path d="M18 46l6-6"/>
+    <circle cx="44" cy="20" r="3"/>
   `,
   FSD: `
     <path d="M38 18l8 8-16 16-8-8 16-16z"/>
@@ -97,11 +97,16 @@ function getServiceIcon(code, name = '') {
   // If the key is not directly in SERVICE_ICON_SVGS, run a fallback resolution
   if (!SERVICE_ICON_SVGS[key]) {
     const nameUpper = String(name || '').toUpperCase();
-    const matchKey = Object.keys(SERVICE_ICON_SVGS).find(k => 
-      key.includes(k) || k.includes(key) || nameUpper.includes(k)
-    );
-    if (matchKey) {
-      key = matchKey;
+    // Prioritize PMO over ESD when resolving key by name
+    if (nameUpper.includes('PMO')) {
+      key = 'PMO';
+    } else {
+      const matchKey = Object.keys(SERVICE_ICON_SVGS).find(k => 
+        key.includes(k) || k.includes(key) || nameUpper.includes(k)
+      );
+      if (matchKey) {
+        key = matchKey;
+      }
     }
   }
 
