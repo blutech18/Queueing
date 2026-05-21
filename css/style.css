@@ -188,13 +188,13 @@ body.kiosk-screen .kiosk-grid .service-icon {
   justify-content: center;
   pointer-events: none;
   color: var(--blue-600);
-  opacity: 0.26;
+  opacity: 0.44;
 }
 
 body.kiosk-screen .kiosk-grid .service-icon svg {
-  width: min(88%, 320px);
-  height: min(82%, 320px);
-  stroke-width: 2.4;
+  width: min(98%, 100%);
+  height: min(94%, 100%);
+  stroke-width: 2.6;
 }
 
 body.kiosk-screen .kiosk-grid .service-name {
@@ -210,7 +210,10 @@ body.kiosk-screen .kiosk-grid .service-name {
   justify-content: center;
   text-align: center;
   padding: 0 10px;
-  text-shadow: 0 1px 0 #ffffff, 0 2px 12px rgba(255, 255, 255, 0.95);
+  text-shadow:
+    0 1px 0 #ffffff,
+    0 0 10px rgba(255, 255, 255, 0.95),
+    0 0 18px rgba(255, 255, 255, 0.85);
 }
 
 @supports (width: 1cqh) {
@@ -223,8 +226,8 @@ body.kiosk-screen .kiosk-grid .service-name {
   }
 
   body.kiosk-screen .kiosk-grid .service-icon svg {
-    width: min(84cqw, 88cqh);
-    height: min(84cqw, 88cqh);
+    width: min(98cqw, 102cqh);
+    height: min(98cqw, 102cqh);
   }
 
   body.kiosk-screen .kiosk-grid .service-name {
@@ -303,7 +306,7 @@ body.kiosk-screen .kiosk-page .message {
 }
 
 body.kiosk-screen .kiosk-grid .service-button:hover .service-icon {
-  opacity: 0.34;
+  opacity: 0.54;
 }
 
 .service-code {
