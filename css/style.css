@@ -194,7 +194,9 @@ body.kiosk-screen .kiosk-grid .service-icon {
 body.kiosk-screen .kiosk-grid .service-icon svg {
   width: min(98%, 100%);
   height: min(94%, 100%);
-  stroke-width: 2.6;
+  stroke-width: 2.8;
+  transform: scale(1.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 body.kiosk-screen .kiosk-grid .service-name {
@@ -306,7 +308,11 @@ body.kiosk-screen .kiosk-page .message {
 }
 
 body.kiosk-screen .kiosk-grid .service-button:hover .service-icon {
-  opacity: 0.54;
+  opacity: 0.58;
+}
+
+body.kiosk-screen .kiosk-grid .service-button:hover .service-icon svg {
+  transform: scale(1.42);
 }
 
 .service-code {
