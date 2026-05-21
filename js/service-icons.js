@@ -10,6 +10,12 @@ const SERVICE_ICON_SVGS = {
     <path d="M24 46v4M40 46v4"/>
     <path d="M26 22h12"/>
   `,
+  ESD: `
+    <path d="M32 34c8 0 14-5 14-12V16H18v6c0 7 6 12 14 12z"/>
+    <path d="M20 40h24v6H20z"/>
+    <path d="M24 46v4M40 46v4"/>
+    <path d="M26 22h12"/>
+  `,
   FSD: `
     <path d="M38 18l8 8-16 16-8-8 16-16z"/>
     <path d="M24 32l8 8"/>
@@ -86,7 +92,19 @@ const DEFAULT_ICON = `
 `;
 
 function getServiceIcon(code, name = '') {
-  const key = String(code || '').trim().toUpperCase();
+  let key = String(code || '').trim().toUpperCase();
+  
+  // If the key is not directly in SERVICE_ICON_SVGS, run a fallback resolution
+  if (!SERVICE_ICON_SVGS[key]) {
+    const nameUpper = String(name || '').toUpperCase();
+    const matchKey = Object.keys(SERVICE_ICON_SVGS).find(k => 
+      key.includes(k) || k.includes(key) || nameUpper.includes(k)
+    );
+    if (matchKey) {
+      key = matchKey;
+    }
+  }
+
   const paths = SERVICE_ICON_SVGS[key] || DEFAULT_ICON;
   const label = name ? `${name} icon` : 'Service icon';
 
