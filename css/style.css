@@ -196,6 +196,9 @@ body.kiosk-screen .kiosk-grid .service-code {
   min-height: clamp(28px, 3.5vh, 46px);
   padding: clamp(4px, 0.8vh, 10px) clamp(10px, 1.2vw, 18px);
   font-weight: 700;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
 }
 
 body.kiosk-screen .kiosk-grid .service-name {
@@ -204,6 +207,9 @@ body.kiosk-screen .kiosk-grid .service-name {
   line-height: 1.12;
   color: var(--blue-900);
   width: 100%;
+  display: block;
+  align-self: center;
+  text-align: center;
 }
 
 @supports (width: 1cqh) {
@@ -315,6 +321,16 @@ body.kiosk-screen .kiosk-page .message {
 
 .service-name {
   font-size: 20px;
+}
+
+body.kiosk-screen .kiosk-grid .service-button {
+  align-items: center;
+  text-align: center;
+}
+
+body.kiosk-screen .kiosk-grid .service-code,
+body.kiosk-screen .kiosk-grid .service-name {
+  text-align: center;
 }
 
 .form-grid {
