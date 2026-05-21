@@ -188,12 +188,13 @@ body.kiosk-screen .kiosk-grid .service-icon {
   justify-content: center;
   pointer-events: none;
   color: var(--blue-600);
-  opacity: 0.2;
+  opacity: 0.26;
 }
 
 body.kiosk-screen .kiosk-grid .service-icon svg {
-  width: clamp(72px, 52%, 180px);
-  height: clamp(72px, 52%, 180px);
+  width: min(88%, 320px);
+  height: min(82%, 320px);
+  stroke-width: 2.4;
 }
 
 body.kiosk-screen .kiosk-grid .service-name {
@@ -208,7 +209,8 @@ body.kiosk-screen .kiosk-grid .service-name {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 8px;
+  padding: 0 10px;
+  text-shadow: 0 1px 0 #ffffff, 0 2px 12px rgba(255, 255, 255, 0.95);
 }
 
 @supports (width: 1cqh) {
@@ -221,8 +223,8 @@ body.kiosk-screen .kiosk-grid .service-name {
   }
 
   body.kiosk-screen .kiosk-grid .service-icon svg {
-    width: clamp(72px, 55cqh, 200px);
-    height: clamp(72px, 55cqh, 200px);
+    width: min(84cqw, 88cqh);
+    height: min(84cqw, 88cqh);
   }
 
   body.kiosk-screen .kiosk-grid .service-name {
@@ -301,7 +303,7 @@ body.kiosk-screen .kiosk-page .message {
 }
 
 body.kiosk-screen .kiosk-grid .service-button:hover .service-icon {
-  opacity: 0.28;
+  opacity: 0.34;
 }
 
 .service-code {
