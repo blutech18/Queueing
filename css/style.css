@@ -171,45 +171,44 @@ button:disabled {
 }
 
 body.kiosk-screen .kiosk-grid .service-button {
+  position: relative;
+  overflow: hidden;
   padding: clamp(12px, 2.5vh, 28px) clamp(14px, 1.8vw, 32px);
-  gap: clamp(6px, 1.2vh, 14px);
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.service-icon {
+body.kiosk-screen .kiosk-grid .service-icon {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  color: var(--blue-700);
+  pointer-events: none;
+  color: var(--blue-600);
+  opacity: 0.2;
 }
 
-body.kiosk-screen .service-icon svg {
-  width: clamp(36px, 6vh, 72px);
-  height: clamp(36px, 6vh, 72px);
-}
-
-body.kiosk-screen .kiosk-grid .service-code {
-  font-size: clamp(14px, 2vh, 26px);
-  min-height: clamp(28px, 3.5vh, 46px);
-  padding: clamp(4px, 0.8vh, 10px) clamp(10px, 1.2vw, 18px);
-  font-weight: 700;
-  align-self: center;
-  justify-content: center;
-  text-align: center;
+body.kiosk-screen .kiosk-grid .service-icon svg {
+  width: clamp(72px, 52%, 180px);
+  height: clamp(72px, 52%, 180px);
 }
 
 body.kiosk-screen .kiosk-grid .service-name {
+  position: relative;
+  z-index: 1;
   font-size: clamp(20px, 4.5vh, 46px);
   font-weight: 800;
   line-height: 1.12;
   color: var(--blue-900);
   width: 100%;
-  display: block;
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 0 8px;
 }
 
 @supports (width: 1cqh) {
@@ -219,18 +218,11 @@ body.kiosk-screen .kiosk-grid .service-name {
 
   body.kiosk-screen .kiosk-grid .service-button {
     padding: clamp(12px, 5cqh, 28px) clamp(14px, 6cqw, 32px);
-    gap: clamp(6px, 2.5cqh, 14px);
   }
 
-  body.kiosk-screen .service-icon svg {
-    width: clamp(36px, 18cqh, 80px);
-    height: clamp(36px, 18cqh, 80px);
-  }
-
-  body.kiosk-screen .kiosk-grid .service-code {
-    font-size: clamp(14px, 13cqh, 26px);
-    min-height: clamp(28px, 18cqh, 46px);
-    padding: clamp(4px, 2cqh, 10px) clamp(10px, 4cqw, 18px);
+  body.kiosk-screen .kiosk-grid .service-icon svg {
+    width: clamp(72px, 55cqh, 200px);
+    height: clamp(72px, 55cqh, 200px);
   }
 
   body.kiosk-screen .kiosk-grid .service-name {
@@ -308,6 +300,10 @@ body.kiosk-screen .kiosk-page .message {
   border-color: var(--blue-600);
 }
 
+body.kiosk-screen .kiosk-grid .service-button:hover .service-icon {
+  opacity: 0.28;
+}
+
 .service-code {
   display: inline-flex;
   align-items: center;
@@ -321,16 +317,6 @@ body.kiosk-screen .kiosk-page .message {
 
 .service-name {
   font-size: 20px;
-}
-
-body.kiosk-screen .kiosk-grid .service-button {
-  align-items: center;
-  text-align: center;
-}
-
-body.kiosk-screen .kiosk-grid .service-code,
-body.kiosk-screen .kiosk-grid .service-name {
-  text-align: center;
 }
 
 .form-grid {
