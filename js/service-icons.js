@@ -11,10 +11,20 @@ const SERVICE_ICON_SVGS = {
     <path d="M26 22h12"/>
   `,
   ESD: `
-    <path d="M38 18l8 8-16 16-8-8 16-16z"/>
-    <path d="M24 32l8 8"/>
-    <path d="M18 46l6-6"/>
-    <circle cx="44" cy="20" r="3"/>
+    <!-- Helmet dome -->
+    <path d="M20 23c0-8 5-13 12-13s12 5 12 13"/>
+    <!-- Helmet brim/visor -->
+    <path d="M16 26c4-2 10-3 16-3s12 1 16 3"/>
+    <!-- Helmet middle ridge -->
+    <path d="M32 10v13"/>
+    <!-- Face -->
+    <path d="M24 26v4c0 5 3.5 8 8 8s8-3 8-8v-4"/>
+    <!-- Neck -->
+    <path d="M28 38v4M36 38v4"/>
+    <!-- Shoulders -->
+    <path d="M18 52c0-7 6-11 14-11s14 4 14 11"/>
+    <!-- Safety Vest lines -->
+    <path d="M26 42l6 10 6-10"/>
   `,
   FSD: `
     <path d="M38 18l8 8-16 16-8-8 16-16z"/>
@@ -51,9 +61,21 @@ const SERVICE_ICON_SVGS = {
     <path d="M32 22v12"/>
   `,
   PPD: `
-    <rect x="16" y="12" width="32" height="40" rx="3"/>
-    <path d="M22 22h20M22 30h20M22 38h14"/>
-    <path d="M40 38l8 8"/>
+    <!-- Hair -->
+    <path d="M22 23c0-5 4-7 10-7s10 2 10 7"/>
+    <!-- Face -->
+    <path d="M24 24v4c0 5 3.5 8 8 8s8-3 8-8v-4"/>
+    <!-- Neck -->
+    <path d="M28 38v4M36 38v4"/>
+    <!-- Shoulders -->
+    <path d="M16 52c0-8 6-12 16-12s16 4 16 12"/>
+    <!-- Cadet Epaulets (Shoulder boards) -->
+    <path d="M16 42l6 1.5M48 42l-6 1.5"/>
+    <!-- Tie and Collar -->
+    <path d="M28 40l4 4 4-4"/>
+    <path d="M31 44l1 8 1-8z"/>
+    <!-- Suit lapels / V-neck jacket -->
+    <path d="M22 40l10 12 10-12"/>
   `,
   AS: `
     <rect x="18" y="12" width="28" height="36" rx="3"/>
