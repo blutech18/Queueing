@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   if (!allowMethods(req, res, ['POST'])) return;
 
   try {
-    const { serviceId, serviceName } = req.body || {};
+    const { serviceId, serviceName, serviceDetail } = req.body || {};
     const sql = getSql();
 
     const services = serviceId
@@ -16,6 +16,10 @@ export default async function handler(req, res) {
     }
 
     const service = services[0];
+    const storedServiceName = serviceDetail
+      ? `${service.name} — ${serviceDetail}`
+      : service.name;
+
     const rows = await sql`
       SELECT COUNT(*)::int AS count
       FROM queues
@@ -28,7 +32,7 @@ export default async function handler(req, res) {
 
     const inserted = await sql`
       INSERT INTO queues (queue_number, service_id, service_name, status)
-      VALUES (${queueNumber}, ${service.id}, ${service.name}, 'waiting')
+      VALUES (${queueNumber}, ${service.id}, ${storedServiceName}, 'waiting')
       RETURNING id, queue_number, service_id, service_name, status, created_at
     `;
 

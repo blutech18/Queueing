@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS queues (
   id SERIAL PRIMARY KEY,
   queue_number VARCHAR(20) NOT NULL,
   service_id INTEGER NOT NULL REFERENCES services(id),
-  service_name VARCHAR(100) NOT NULL,
+  service_name VARCHAR(255) NOT NULL,
   status VARCHAR(20) NOT NULL DEFAULT 'waiting'
     CHECK (status IN ('waiting', 'serving', 'skipped', 'completed')),
   counter_number VARCHAR(20),

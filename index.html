@@ -27,21 +27,35 @@
     <p class="message" id="kioskMessage"></p>
   </main>
 
-  <div class="modal" id="ticketModal" role="dialog" aria-modal="true" aria-labelledby="ticketTitle">
+  <dialog class="modal" id="subServiceModal" aria-labelledby="subServiceModalTitle">
+    <div class="modal-card records-modal-card">
+      <h2 id="subServiceModalTitle">Choose Service</h2>
+      <div class="records-options" id="subServiceOptions"></div>
+      <p class="message error records-message" id="subServiceMessage" hidden></p>
+      <div class="modal-actions records-modal-actions">
+        <button type="button" id="subServiceProceed">Proceed</button>
+        <button type="button" class="secondary" id="subServiceClear">Clear</button>
+        <button type="button" class="secondary" id="subServiceCancel">Cancel</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="ticketModal" aria-labelledby="ticketTitle">
     <div class="modal-card">
       <h2 id="ticketTitle">Your Queue Number</h2>
       <span class="ticket-number" id="ticketNumber">---</span>
       <p id="ticketService"></p>
+      <ul class="ticket-sub-services" id="ticketSubServices" hidden></ul>
       <p class="message">Please wait for your number to be called.</p>
       <div class="modal-actions">
-        <button id="printTicket">Print Ticket</button>
-        <button class="secondary" id="closeTicket">Close</button>
+        <button type="button" id="printTicket">Print Ticket</button>
+        <button type="button" class="secondary" id="closeTicket">Close</button>
       </div>
     </div>
-  </div>
+  </dialog>
 
   <script src="js/api-fetch.js"></script>
   <script src="js/service-icons.js"></script>
-  <script src="js/kiosk.js"></script>
+  <script type="module" src="js/kiosk.js"></script>
 </body>
 </html>

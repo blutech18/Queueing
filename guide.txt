@@ -1,0 +1,241 @@
+================================================================================
+              QUEUEING SYSTEM - HOW TO SET UP ON YOUR COMPUTER
+                         (Easy Step-by-Step Guide)
+================================================================================
+
+Welcome! This guide will help you run the Queueing System on your own
+computer so you can try it out before going live.
+
+You do NOT need to be a programmer. Just follow each step in order.
+If something does not make sense, ask your IT person or developer for help.
+
+Estimated time: 10–15 minutes (first time)
+
+
+================================================================================
+  BEFORE YOU START — WHAT YOU WILL NEED
+================================================================================
+
+  [ ]  A Windows computer with internet access
+
+  [ ]  The Queueing System folder on your computer, ready to use
+       (Example: D:\Clients\Queueing-System)
+       Your developer or IT team should give you the complete folder.
+
+  [ ]  Node.js installed (free software that runs the app)
+       Download here: https://nodejs.org/
+       → Click the big green "LTS" button and install it.
+       → Keep clicking "Next" — the default settings are fine.
+
+
+================================================================================
+  PART 1 — INSTALL THE APP ON YOUR COMPUTER
+================================================================================
+
+--- Step 1.1: Open PowerShell in the project folder ---
+
+  PowerShell is a window where you type short commands. Don't worry — we
+  will tell you exactly what to type.
+
+  EASIEST WAY (Windows):
+
+  1. Open File Explorer and go to your Queueing System folder.
+  2. Click once in the address bar at the top (where the folder path shows).
+  3. Type:  powershell
+  4. Press Enter.
+     A blue window opens — that is PowerShell, already in the right folder.
+
+--- Step 1.2: Install the app ---
+
+  1. In the PowerShell window, type this exactly and press Enter:
+
+         npm install
+
+  2. Wait until it finishes. You will see the blinking cursor again.
+     This may take 1–3 minutes. It only needs to be done once.
+
+  ✓ Part 1 done! The app is installed.
+
+
+================================================================================
+  PART 2 — START THE APP
+================================================================================
+
+--- Step 2.1: Turn on the app ---
+
+  1. Open PowerShell in the Queueing System folder (same as Part 1, Step 1.1).
+  2. Type this and press Enter:
+
+         npm run local
+
+  3. Wait. The first time may take a minute.
+  4. When it is ready, you will see text mentioning "localhost:3000."
+     That means the app is running!
+
+  ⚠ Keep this PowerShell window OPEN while you use the app.
+     Closing it or pressing Ctrl+C will turn the app off.
+
+  ✓ Part 2 done! The app is running on your computer.
+
+
+================================================================================
+  PART 3 — OPEN THE APP IN YOUR WEB BROWSER
+================================================================================
+
+  Open Google Chrome, Edge, or any web browser.
+
+  Type one of these addresses into the address bar and press Enter:
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  SCREEN          │  WHO USES IT              │  WEB ADDRESS              │
+  ├──────────────────┼───────────────────────────┼───────────────────────────┤
+  │  Kiosk           │  Clients / visitors       │  http://localhost:3000/   │
+  │  Counter         │  Staff at the window      │  http://localhost:3000/counter.html   │
+  │  Display         │  TV in the waiting area   │  http://localhost:3000/display.html   │
+  │  Admin           │  Office manager / admin   │  http://localhost:3000/admin.html      │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  TIP: You can bookmark these addresses in your browser for quick access.
+
+
+  ⚠⚠⚠ VERY IMPORTANT — PLEASE READ ⚠⚠⚠
+
+  DO NOT open the app by double-clicking files like "index.html" in
+  File Explorer. That will NOT work.
+
+  Always type  http://localhost:3000/  in your browser address bar
+  while the PowerShell window from Part 2 is still open.
+
+
+================================================================================
+  PART 4 — QUICK TEST (MAKE SURE EVERYTHING WORKS)
+================================================================================
+
+  Try these in order:
+
+  [ ]  1. Open http://localhost:3000/ in your browser.
+          → You should see buttons for different services (AD RECORDS,
+            CASHIER, etc.).
+
+  [ ]  2. Click any service button.
+          → You should get a queue number like "AD-001."
+
+  [ ]  3. Open http://localhost:3000/counter.html
+          → Pick a service and counter, then click "Next."
+          → The queue number you just created should appear.
+
+  [ ]  4. Open http://localhost:3000/display.html
+          → You should see the number being served on screen.
+
+  [ ]  5. Open http://localhost:3000/admin.html
+          → You should see today's queue list and statistics.
+
+  If all five checks pass — congratulations! Setup is complete.
+
+
+================================================================================
+  WHAT EACH SCREEN IS FOR
+================================================================================
+
+  KIOSK  (http://localhost:3000/)
+    The touch-screen or tablet where visitors pick a service and get
+    their queue number.
+
+  COUNTER  (http://localhost:3000/counter.html)
+    Used by staff at each service window. Buttons let them call the next
+    person, recall a number, skip someone, or mark a transaction done.
+
+  DISPLAY  (http://localhost:3000/display.html)
+    Put this on a TV or large monitor in the waiting area. It shows
+    who is being served and updates automatically.
+
+  ADMIN  (http://localhost:3000/admin.html)
+    For managers. Turn services on or off and view today's queue activity.
+
+
+================================================================================
+  HOW TO STOP AND START AGAIN LATER
+================================================================================
+
+  TO STOP the app:
+    Go to the PowerShell window and press Ctrl+C.
+    Type  Y  if it asks to confirm, then press Enter.
+
+  TO START again (next day, etc.):
+    1. Open PowerShell in the Queueing System folder.
+    2. Type:  npm run local
+    3. Press Enter and wait for "localhost:3000."
+    4. Open your browser to the addresses above.
+
+  You do NOT need to run "npm install" again unless you move to a new
+  computer or receive an updated project folder from your developer.
+
+
+================================================================================
+  COMMON PROBLEMS AND FIXES
+================================================================================
+
+  PROBLEM: PowerShell says "'node' is not recognized" or "'npm' is not
+           recognized"
+  FIX:     Node.js is not installed (or your computer needs a restart
+           after installing it).
+           → Install from https://nodejs.org/ (click the green LTS button).
+           → Restart your computer, then try again.
+
+
+  PROBLEM: The browser page is blank or shows no service buttons
+  FIX:     Stop the app (Ctrl+C), then start it again (npm run local).
+           → If it still does not work, contact your developer or IT support.
+
+
+  PROBLEM: You double-clicked index.html and nothing works / you see
+           an error message
+  FIX:     Close that browser tab.
+           → Make sure PowerShell is running with "npm run local."
+           → Open http://localhost:3000/ in the browser instead.
+
+
+  PROBLEM: PowerShell says port 3000 is already in use
+  FIX:     Another program is using that spot.
+           → Close any other PowerShell windows running the app.
+           → Or restart your computer and try "npm run local" again.
+
+
+  PROBLEM: "npm install" fails or shows lots of red text
+  FIX:     Check your internet connection.
+           → Make sure PowerShell is open inside the Queueing System
+             folder (not your Desktop or Documents).
+           → Try again: type  npm install  and press Enter.
+
+
+  PROBLEM: Something else goes wrong or you see an error you don't understand
+  FIX:     Take a screenshot of the error message and send it to your
+           developer or IT support person.
+
+
+================================================================================
+  WHEN YOU ARE READY TO GO LIVE (ON THE INTERNET)
+================================================================================
+
+  Running on your computer (localhost) is only for testing on one machine.
+  To let other computers, tablets, and TVs use the system over the internet,
+  ask your developer or IT team to publish the app online for you.
+
+
+================================================================================
+  NEED MORE HELP?
+================================================================================
+
+  If you get stuck, write down or take a screenshot of:
+
+    • What step you were on
+    • The exact error message (copy from PowerShell or the browser)
+    • Whether the five tests in Part 4 passed or failed
+
+  Send that to your developer or IT support person.
+
+
+================================================================================
+                           END OF GUIDE
+                    Thank you for using Queueing System!
+================================================================================
