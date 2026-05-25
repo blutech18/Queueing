@@ -33,6 +33,18 @@ const SUB_SERVICE_CONFIG = {
       'Permit to Construct'
     ]
   },
+  PMO: {
+    title: 'Choose OPM Permits',
+    type: 'checkbox',
+    options: [
+      'Accreditation of Port Service Provider',
+      'Permit to Operate Ancillary Services',
+      'Permit to Occupy (New & Renewal)',
+      'Endorsement of Application for COR/PTO of Private Port',
+      'Application for private port permit: issuance of CTD',
+      'Application for private port issuance of permit to construct'
+    ]
+  },
   PR: {
     title: 'Select Remarks',
     type: 'select',
@@ -115,18 +127,6 @@ const SUB_SERVICE_CONFIG = {
       'Watering Services',
       'Vessel Entrance Formalities',
       'Vessel Departure Clearance'
-    ]
-  },
-  PPD: {
-    title: 'Choose PMO Service (OPM-Permits)',
-    type: 'checkbox',
-    options: [
-      'Accreditation of Port Service Provider',
-      'Permit to Operate Ancillary Services',
-      'Permit to Occupy (New & Renewal)',
-      'Endorsement of Application for COR/PTO of Private Port',
-      'Application for private port permit: issuance of CTD',
-      'Application for private port issuance of permit to construct'
     ]
   }
 };

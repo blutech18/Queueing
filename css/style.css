@@ -1012,6 +1012,26 @@ body.display-screen .empty {
   }
 }
 
+@media (orientation: portrait), (max-aspect-ratio: 1/1) {
+  body.display-screen .display-page .display-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 16px;
+  }
+
+  body.display-screen .display-current strong {
+    font-size: clamp(72px, 18vw, 180px);
+  }
+
+  body.display-screen #displayService {
+    font-size: clamp(22px, 3.2vh, 44px);
+  }
+
+  body.display-screen .display-recent h2 {
+    font-size: clamp(22px, 2.4vh, 32px);
+  }
+}
+
 @media (max-width: 860px) {
   body.display-screen .display-page {
     padding: 12px 14px 14px;
@@ -1022,7 +1042,8 @@ body.display-screen .empty {
   }
 
   body.display-screen .display-page .display-layout {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1.15fr) minmax(0, 0.85fr);
     gap: 14px;
   }
 
