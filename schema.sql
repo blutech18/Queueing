@@ -35,7 +35,7 @@ CREATE INDEX IF NOT EXISTS idx_queues_created_at
 
 INSERT INTO services (name, code) VALUES
   ('AD RECORDS', 'AD'),
-  ('PMO SERVICE (ESD)', 'PMO'),
+  ('OPM Permits', 'PMO'),
   ('ESD', 'ESD'),
   ('PRIORITY LANE', 'PR'),
   ('TERMINAL', 'TR'),
@@ -48,6 +48,8 @@ INSERT INTO services (name, code) VALUES
   ('MARINE', 'MA')
 ON CONFLICT (name) DO UPDATE
 SET code = EXCLUDED.code;
+
+UPDATE services SET name = 'OPM Permits' WHERE code = 'PMO';
 
 INSERT INTO counters (counter_name) VALUES
   ('Counter 1'),

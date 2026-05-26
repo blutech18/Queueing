@@ -104,8 +104,8 @@ const SUB_SERVICE_CONFIG = {
   CA: {
     title: 'Choose Cashier Service',
     type: 'checkbox',
+    topOptions: ['Vessel Departure Clearance'],
     options: [
-      'Vessel Departure Clearance',
       'Entry of Cargoes',
       'Withdrawal of Cargoes',
       'Repair and Hotworks',
@@ -178,8 +178,17 @@ function clearSubServiceSelection() {
   setSubServiceMessage('');
 }
 
+function renderCheckboxOption(label, featured = false) {
+  return `
+    <label class="records-option${featured ? ' records-option-featured' : ''}">
+      <input type="checkbox" name="subServiceOption" value="${label}">
+      <span>${label}</span>
+    </label>
+  `;
+}
+
 function renderSubServiceOptions(config) {
-  const { type = 'checkbox', options } = config;
+  const { type = 'checkbox', options = [], topOptions = [] } = config;
   activeSubServiceType = type;
 
   if (type === 'select') {
@@ -193,16 +202,20 @@ function renderSubServiceOptions(config) {
     return;
   }
 
-  subServiceOptions.innerHTML = options
-    .map(
-      (label) => `
-        <label class="records-option">
-          <input type="checkbox" name="subServiceOption" value="${label}">
-          <span>${label}</span>
-        </label>
-      `
-    )
-    .join('');
+  if (topOptions.length) {
+    const topHtml = topOptions.map((label) => renderCheckboxOption(label, true)).join('');
+    const mainHtml = options.map((label) => renderCheckboxOption(label)).join('');
+    const divider = options.length ? '<hr class="records-options-divider">' : '';
+
+    subServiceOptions.innerHTML = `
+      <div class="records-options-top">${topHtml}</div>
+      ${divider}
+      <div class="records-options-main">${mainHtml}</div>
+    `;
+    return;
+  }
+
+  subServiceOptions.innerHTML = options.map((label) => renderCheckboxOption(label)).join('');
 }
 
 function openSubServiceModal(service) {

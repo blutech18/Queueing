@@ -51,7 +51,7 @@ queueing-system/
 Default services:
 
 - AD RECORDS
-- PMO SERVICE (ESD)
+- OPM Permits
 - FSD
 - PRIORITY LANE
 - TERMINAL

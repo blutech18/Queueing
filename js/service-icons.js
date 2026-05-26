@@ -119,8 +119,8 @@ function getServiceIcon(code, name = '') {
   // If the key is not directly in SERVICE_ICON_SVGS, run a fallback resolution
   if (!SERVICE_ICON_SVGS[key]) {
     const nameUpper = String(name || '').toUpperCase();
-    // Prioritize PMO over ESD when resolving key by name
-    if (nameUpper.includes('PMO')) {
+    // Prioritize PMO/OPM over ESD when resolving key by name
+    if (nameUpper.includes('PMO') || nameUpper.includes('OPM')) {
       key = 'PMO';
     } else {
       const matchKey = Object.keys(SERVICE_ICON_SVGS).find(k => 

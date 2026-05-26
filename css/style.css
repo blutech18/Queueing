@@ -663,6 +663,33 @@ td {
   cursor: pointer;
 }
 
+.records-options-top {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.records-options-main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.records-option-featured {
+  font-weight: 700;
+  color: var(--blue-900);
+  padding: 12px 14px;
+  border: 1px solid var(--blue-300);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, var(--blue-50) 100%);
+}
+
+.records-options-divider {
+  border: none;
+  border-top: 2px solid var(--blue-200);
+  margin: 4px 0 2px;
+}
+
 .records-message {
   padding-top: 0;
   margin-bottom: 0;
