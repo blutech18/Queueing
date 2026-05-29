@@ -56,7 +56,11 @@ const SUB_SERVICE_CONFIG = {
       'TERMINAL',
       'FD-Disbursement',
       'PSD-Safety',
-      'PPD'
+      'PPD',
+      'AD RECORDS',
+      'OPM Permits',
+      'ESD',
+      'CASHIER'
     ]
   },
   TR: {
